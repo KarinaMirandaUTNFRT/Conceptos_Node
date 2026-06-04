@@ -1,11 +1,13 @@
- {
+{
   "name": "17-conceptonode",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    
+    "start": "node index",
+    "dev": "node --watch index"
   },
   "keywords": [
     "endpoint",
@@ -21,6 +23,7 @@
     }
   },
   "dependencies": {
+    "express": "^5.2.1",
     "mongoose": "^9.6.3"
   },
   "devDependencies": {
