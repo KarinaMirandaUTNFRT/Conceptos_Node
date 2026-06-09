@@ -1,6 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
+import {dirname} from'path';
+import { fileURLToPath } from 'url';
 
 const app = express()
 const PORT = 3000
@@ -8,7 +10,10 @@ const PORT = 3000
 app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
+const __dirname = dirname (fileURLToPath(import.meta.url))
+console.log(__dirname + '/public')
 
+app.use(express.static(__dirname + '/public'))
 console.log('este backend ya escucha')
 
 app.get("/api/saludo", (req, res)=> {
